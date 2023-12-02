@@ -1,6 +1,8 @@
-function TodoCounter(){
+import './TodoCounter.css'
+
+function TodoCounter({completado, faltan}){
     return (
-        <h1> Tienes pendiete 2 tareas de 4</h1>
+        <h1> Haz completado <span className='span'>{completado}</span> de <span>{faltan}</span> todos</h1>
     )
 }
 

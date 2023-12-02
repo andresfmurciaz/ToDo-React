@@ -1,11 +1,17 @@
-
-function TodoItem(){
+import './TodoItem.css'
+function TodoItem({completado,text}){
     return (
-      <li>
-        <span>V</span>
-        <p>hacer comida</p>
-        <span>x</span>
-      </li>
+      <li className="TodoItem">
+      <span className={`Icon Icon-check ${completado && "Icon-check--active"}`}>
+        V
+      </span>
+      <p className={`TodoItem-p ${completado && "TodoItem-p--complete"}`}>
+        {text}
+      </p>
+      <span className="Icon Icon-delete">
+        X
+      </span>
+    </li>
     );
   }
   export {TodoItem}
