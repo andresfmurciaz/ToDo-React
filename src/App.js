@@ -16,11 +16,21 @@ const defaultTodos = [
 ];
 
 function App() {
+
+const [todos, setTodos]=React.useState(defaultTodos);
+const todoCompletado = todos.filter(todo=> !!todo.completado).length;
+const todosTodos = todos.length;
+
+//declaro el estado con el renderizado inicial
+const [searchValue, setSearchValue] = React.useState('');
+console.log(searchValue)
+
+
   return (
    
 <>
-        <TodoCounter completado={3} faltan={10}></TodoCounter>
-        <TodoSearch></TodoSearch>
+        <TodoCounter completado={todoCompletado} faltan={todosTodos}></TodoCounter>
+        <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue}></TodoSearch>
 
         <TodoList>
 
