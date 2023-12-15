@@ -8,7 +8,7 @@ import { TodoItem } from './TodoItem';
 import React from 'react';
 
 const defaultTodos = [
-  {text:'hacer desayuno' , completado:true},
+  {text:'HACER desayuno' , completado:true},
   {text:'hacer desayuno 1' , completado:true},
   {text:'hacer desayuno 2' , completado:true},
   {text:'hacer desayuno 3' , completado:true},
@@ -16,6 +16,7 @@ const defaultTodos = [
 ];
 
 function App() {
+
 
 const [todos, setTodos]=React.useState(defaultTodos);
 const todoCompletado = todos.filter(todo=> !!todo.completado).length;
@@ -26,6 +27,13 @@ const [searchValue, setSearchValue] = React.useState('');
 console.log(searchValue)
 
 
+//me filtra los TODO que conin
+const todosFilter = todos.filter((todo) => {
+  return todo.text.toLowerCase().includes(searchValue.toLowerCase())
+});
+
+
+
   return (
    
 <>
@@ -34,7 +42,7 @@ console.log(searchValue)
 
         <TodoList>
 
-              {defaultTodos.map(todo =>(
+              {todosFilter.map(todo =>(
                     <TodoItem key={todo.text} text={todo.text} completado={todo.completado}></TodoItem>
               ))}
               
