@@ -10,22 +10,25 @@ import React from 'react';
 const defaultTodos = [
   {text:'HACER desayuno' , completado:true},
   {text:'hacer desayuno 1' , completado:false},
-  {text:'hacer desayuno 2' , completado:true},
+  {text:'hacer desayuno 2' , completado:false},
   {text:'hacer desayuno 3' , completado:true},
   {text:'hacer desayuno 4' , completado:true},
 ];
 
 function App() {
-
-
+// estado para la lista
 const [todos, setTodos]=React.useState(defaultTodos);
+
+// guarda el numero de las tareas completadas y las que no estan completadas , saca un nuevo arreglo con los true
 const todoCompletado = todos.filter(todo=> !!todo.completado).length;
+
 const todosTodos = todos.length;
 
 //declaro el estado con el renderizado inicial
 const [searchValue, setSearchValue] = React.useState('');
 console.log(searchValue)
 
+// marca el todo como completado
 const completaTodo = (text) =>{
   const newTodo = [...todos ]
   const index = newTodo.findIndex((todo)=>todo.text == text)
@@ -33,15 +36,13 @@ const completaTodo = (text) =>{
    setTodos(newTodo)
 }
 
-
+//elimina el todo 
 const deleteTodo = (text) =>{
   const newTodo = [...todos ]
   const index = newTodo.findIndex((todo)=>todo.text == text)
   newTodo.splice(index,1);
    setTodos(newTodo)
 }
-
-
 
 //me filtra los TODO que conin
 const todosFilter = todos.filter((todo) => {
@@ -59,7 +60,12 @@ const todosFilter = todos.filter((todo) => {
         <TodoList>
 
               {todosFilter.map(todo =>(
-                    <TodoItem key={todo.text} text={todo.text} completado={todo.completado} onComplete={()=>completaTodo(todo.text)}   onDelete={()=>deleteTodo(todo.text)}></TodoItem>
+                    <TodoItem key={todo.text} text={todo.text} 
+                    completado={todo.completado}
+                     onComplete={()=>completaTodo(todo.text)}   
+                     onDelete={()=>deleteTodo(todo.text)}>
+                      
+                     </TodoItem>
               ))}
               
         </TodoList>
