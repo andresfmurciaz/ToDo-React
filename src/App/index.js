@@ -1,44 +1,37 @@
 
 import './App.css';
-import { TodoCounter } from './TodoCounter';
-import { TodoSearch } from './TodoSearch';
-import { TodoList } from './TodoList';
-import { TodoButton } from './TodoButton';
-import { TodoItem } from './TodoItem';
+import { TodoCounter } from '../TodoCounter';
+import { TodoSearch } from '../TodoSearch';
+import { TodoList } from '../TodoList';
+import { TodoButton } from '../TodoButton';
+import { TodoItem } from '../TodoItem';
 import React from 'react';
+import { useLocalStorage } from './useLocalstorege';
 
 
 
 // esto se va usar en la consola para el localstore , el cual primero creamos la variable on el arreglo lo volvemos caracter
 
-//  const defaultTodos = [
-//    {text:'HACER desayuno' , completado:true},
-//    {text:'hacer desayuno 1' , completado:false},
-//   {text:'hacer desayuno 2' , completado:false},
-//    {text:'hacer desayuno 3' , completado:true},
-//    {text:'hacer desayuno 4' , completado:true},
-//  ];
+  // const defaultTodos = [
+  //   {text:'darle besos a lorena' , completado:false},
+  //   {text:'saludar amigas de lorena' , completado:false},
+  //  {text:'hacer enojar a lorena' , completado:false},
+  //   {text:'omer dorimelos con lorena' , completado:false},
+  //   {text:'no morir' , completado:false},
+  // ];
 
-//  localStorage.setItem('TODOS_V1',JSON.stringify(defaultTodos))
+  // localStorage.setItem('TODOS_V1',JSON.stringify(defaultTodos))
+
+  // localStorage.remoItem('TODOS_V1')
 
 
 
 function App() {
 
-//VARIABLE QUE SE USA PARA QUE CAPTURE LO QUE TIENE EN EL LOCALSTORAGE y se lopasamos al estado de la lista 
-const localStorageTodos= localStorage.getItem('TODOS_V1');
-let parsedTodos = JSON.parse(localStorageTodos)
-//cuando el usuario este iniciando por primera vez da el valor a la variable como un null. 
-if( !localStorageTodos ){
-  localStorage.setItem('TODOS_V1',JSON.stringify([]));
-  parsedTodos = [];
-}else{
-
-  parsedTodos = JSON.parse(localStorageTodos);
-}
 
 // estado para la lista
-const [todos, setTodos]=React.useState(parsedTodos);
+//ese estado se conecta con el estado que retornamos en el uselocalstorege
+const [todos, saveTodos] = useLocalStorage('TODOS_V1',[]);
 
 // guarda el numero de las tareas completadas y las que no estan completadas , saca un nuevo arreglo con los true
 const todoCompletado = todos.filter(todo=> !!todo.completado).length;
@@ -48,15 +41,6 @@ const todosTodos = todos.length;
 //declaro el estado con el renderizado inicial
 const [searchValue, setSearchValue] = React.useState('');
 console.log(searchValue)
-
-const saveTodos = (newTodos) => {
-
-  localStorage.setItem('TODOS_V1',JSON.stringify(newTodos));
-
-  setTodos(newTodos);
-};
-
-
 
 
 // marca el todo como completado
