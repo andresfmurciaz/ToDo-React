@@ -1,10 +1,6 @@
 
 import './App.css';
-import { TodoCounter } from '../TodoCounter';
-import { TodoSearch } from '../TodoSearch';
-import { TodoList } from '../TodoList';
-import { TodoButton } from '../TodoButton';
-import { TodoItem } from '../TodoItem';
+import { AppIU } from './AppIU';
 import React from 'react';
 import { useLocalStorage } from './useLocalstorege';
 
@@ -22,7 +18,7 @@ import { useLocalStorage } from './useLocalstorege';
 
   // localStorage.setItem('TODOS_V1',JSON.stringify(defaultTodos))
 
-  // localStorage.remoItem('TODOS_V1')
+  //  localStorage.remoItem('TODOS_V1')
 
 
 
@@ -67,27 +63,15 @@ const todosFilter = todos.filter((todo) => {
 
 
   return (
-   
-<>
-        <TodoCounter completado={todoCompletado} faltan={todosTodos}></TodoCounter>
-        <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue}></TodoSearch>
-
-        <TodoList>
-
-              {todosFilter.map(todo =>(
-                    <TodoItem key={todo.text} text={todo.text} 
-                    completado={todo.completado}
-                     onComplete={()=>completaTodo(todo.text)}   
-                     onDelete={()=>deleteTodo(todo.text)}>
-                      
-                     </TodoItem>
-              ))}
-              
-        </TodoList>
-        <TodoButton/>
-
-  </>  
-    
+ <AppIU
+  todoCompletado = {todoCompletado}
+  searchValue = {searchValue}
+  setSearchValue = {setSearchValue}
+  todosTodos ={todosTodos}
+  todosFilter ={todosFilter}
+  completaTodo = {completaTodo}
+  deleteTodo ={deleteTodo}
+ ></AppIU>
   );
 }
 
