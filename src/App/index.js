@@ -27,7 +27,8 @@ function App() {
 
 // estado para la lista
 //ese estado se conecta con el estado que retornamos en el uselocalstorege
-const [todos, saveTodos] = useLocalStorage('TODOS_V1',[]);
+//se cambia la forma de importar ya que se estan usando dos estados mas loading y error
+const {item : todos, saveItem: saveTodos,loading,error} = useLocalStorage('TODOS_V1',[]);
 
 // guarda el numero de las tareas completadas y las que no estan completadas , saca un nuevo arreglo con los true
 const todoCompletado = todos.filter(todo=> !!todo.completado).length;
@@ -64,6 +65,8 @@ const todosFilter = todos.filter((todo) => {
 
   return (
  <AppIU
+ loading={loading}
+ error={error}
   todoCompletado = {todoCompletado}
   searchValue = {searchValue}
   setSearchValue = {setSearchValue}

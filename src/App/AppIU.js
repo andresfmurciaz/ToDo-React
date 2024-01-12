@@ -11,7 +11,9 @@ function AppIU ({
     todosTodos,
     todosFilter,
     completaTodo,
-    deleteTodo
+    deleteTodo,
+    loading,
+    error
 }) {
 
 
@@ -23,6 +25,12 @@ return (
 
         <TodoList>
 
+
+                {loading && <p>estamos cargando</p>}
+                {error && <p>tenemos error</p>}
+                {/* si no esta cargando y no tiene elementos  */}
+                {(!loading && todosFilter.length === 0 ) && <p>crea tu primer todo</p>}
+                {/* si no tiene nada que iterar no pasa nada */}
               {todosFilter.map(todo =>(
                     <TodoItem key={todo.text} text={todo.text} 
                     completado={todo.completado}
