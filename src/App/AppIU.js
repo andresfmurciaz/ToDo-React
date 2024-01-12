@@ -3,6 +3,9 @@ import { TodoSearch } from '../TodoSearch';
 import { TodoList } from '../TodoList';
 import { TodoButton } from '../TodoButton';
 import { TodoItem } from '../TodoItem';
+import { TodosError } from '../TodosError';
+import { TodosLoading } from '../TodosLoading';
+import { TodosPrimerTodo } from '../TodosPrimerTodo';
 import React from 'react';
 function AppIU ({
     todoCompletado,
@@ -26,10 +29,10 @@ return (
         <TodoList>
 
 
-                {loading && <p>estamos cargando</p>}
-                {error && <p>tenemos error</p>}
+                {loading && <TodosLoading/>}
+                {error && <TodosError/>}
                 {/* si no esta cargando y no tiene elementos  */}
-                {(!loading && todosFilter.length === 0 ) && <p>crea tu primer todo</p>}
+                {(!loading && todosFilter.length === 0 ) && <TodosPrimerTodo/>}
                 {/* si no tiene nada que iterar no pasa nada */}
               {todosFilter.map(todo =>(
                     <TodoItem key={todo.text} text={todo.text} 
