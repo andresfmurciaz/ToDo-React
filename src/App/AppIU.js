@@ -8,10 +8,11 @@ import { TodosLoading } from '../TodosLoading';
 import { TodosPrimerTodo } from '../TodosPrimerTodo';
 import React from 'react';
 import { TodoContext } from '../TodoContext';
+import { Modal } from '../Modal';
 function AppIU () {
 
       const {loading,error,todosFilter, completaTodo,
-            deleteTodo} = React.useContext(TodoContext);
+            deleteTodo,openModal,setOpenModal} = React.useContext(TodoContext);
 
 return (
       
@@ -38,6 +39,15 @@ return (
               
         </TodoList>
         <TodoButton/>
+
+{/* para abrior y cerrar un modal */}
+        {openModal && (
+            <Modal>
+                  hola amigpod
+            </Modal>
+        )
+
+        }
 
   </>  
     

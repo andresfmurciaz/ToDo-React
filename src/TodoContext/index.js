@@ -19,6 +19,8 @@ const todosTodos = todos.length;
 const [searchValue, setSearchValue] = React.useState('');
 console.log(searchValue)
 
+// estado para el modal
+const [openModal, setOpenModal] = React.useState(true);
 
 // marca el todo como completado
 const completaTodo = (text) =>{
@@ -54,7 +56,9 @@ return(
         completaTodo,
         deleteTodo,
         loading,
-        error
+        error,
+        openModal,
+        setOpenModal
    }}> {children}
     
     </TodoContext.Provider>
