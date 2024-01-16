@@ -59,5 +59,17 @@ setTimeout(()=>{
     }
     
     }
+// esto se va usar en la consola para el localstore , el cual primero creamos la variable on el arreglo lo volvemos caracter
 
+  // const defaultTodos = [
+  //   {text:'darle besos a lorena' , completado:false},
+  //   {text:'saludar amigas de lorena' , completado:false},
+  //  {text:'hacer enojar a lorena' , completado:false},
+  //   {text:'omer dorimelos con lorena' , completado:false},
+  //   {text:'no morir' , completado:false},
+  // ];
+
+  // localStorage.setItem('TODOS_V1',JSON.stringify(defaultTodos))
+
+  //  localStorage.remoItem('TODOS_V1')
     export {useLocalStorage}

@@ -7,24 +7,17 @@ import { TodosError } from '../TodosError';
 import { TodosLoading } from '../TodosLoading';
 import { TodosPrimerTodo } from '../TodosPrimerTodo';
 import React from 'react';
-function AppIU ({
-    todoCompletado,
-    searchValue,
-    setSearchValue,
-    todosTodos,
-    todosFilter,
-    completaTodo,
-    deleteTodo,
-    loading,
-    error
-}) {
+import { TodoContext } from '../TodoContext';
+function AppIU () {
 
+      const {loading,error,todosFilter, completaTodo,
+            deleteTodo} = React.useContext(TodoContext);
 
 return (
       
 <>
-        <TodoCounter completado={todoCompletado} faltan={todosTodos}></TodoCounter>
-        <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue}></TodoSearch>
+        <TodoCounter ></TodoCounter>
+        <TodoSearch ></TodoSearch>
 
         <TodoList>
 
