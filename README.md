@@ -1,75 +1,29 @@
-# Repositorio base del Curso de Introducción a React.js en Platzi
+# To-Do Tareas - React
 
-¡Hola, Platzinauta!
+Este repositorio contiene una aplicación desarrollada con React para gestionar listas de tareas. La aplicación permite marcar, eliminar, filtrar y agregar tareas.
 
-En este repositorio encontrarás el código de todas las clases del [Curso de Introducción a React.js](https://platzi.com/reactjs). Para empezar solo debes clonar este repositorio (`git clone`), instalar sus dependencias (`npm i`) y ejecutar la aplicación (`npm start`).
+## Características y Tecnologías Utilizadas
 
-La rama principal contiene el código con el que eempezamos el curso. En las demás ramas encontrarás el código de las siguientes clases y finalmente el deploy de la aplicación.
+- **Estados y Efectos:** Se usaron estados para manejar la información interna y efectos para acciones especiales.
+- **React Context y useContext:** Implementación de Context API y el hook useContext para compartir datos entre componentes de manera eficiente.
+- **React Portals:** Uso de Portals para renderizar componentes fuera de su contenedor principal, proporcionando flexibilidad en el diseño.
+- **Custom Hooks:** Desarrollo de hooks personalizados para modularizar la lógica y reutilizarla en diferentes partes de la aplicación.
+- **Iconos Personalizados:** Integración de iconos personalizados para mejorar la interfaz y proporcionar una experiencia visual agradable.
+- **Manejo de Estilos con CSS:** Estilización de componentes utilizando hojas de estilo CSS para una presentación limpia y atractiva.
+- entre otras tecnologias base para el manejo de react.
 
-¡Mucha suerte aprendiendo React! #NuncaParesDeAprender
+## Enlace de Implementación (Git Pages)
 
-## Getting Started with Create React App
+La aplicación está disponible en línea a través de Git Pages. Puedes acceder [aquí](https://andresfmurciaz.github.io/ToDo-React/).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Instrucciones de Uso
 
-## Available Scripts
+1. **Agregar Tareas:** Utiliza la opción correspondiente para crear nuevas tareas.
+2. **Marcar como Completado:** Haz clic en la opción de completado para marcar una tarea como finalizada.
+3. **Eliminar Tareas:** Utiliza la opción de eliminar para quitar tareas de la lista.
+4. **Filtrar Tareas:** Utiliza las opciones de filtrado para mostrar solo tareas completadas, pendientes o todas.
 
-In the project directory, you can run:
+---
+¡Gracias por revisar mi portafolio!
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
