@@ -9,6 +9,7 @@ import { TodosPrimerTodo } from '../TodosPrimerTodo';
 import React from 'react';
 import { TodoContext } from '../TodoContext';
 import { Modal } from '../Modal';
+import {TodoForm} from '../TodoForm';
 function AppIU () {
 
       const {loading,error,todosFilter, completaTodo,
@@ -38,12 +39,12 @@ return (
               ))}
               
         </TodoList>
-        <TodoButton/>
+        <TodoButton setOpenModal={setOpenModal}/>
 
 {/* para abrior y cerrar un modal */}
         {openModal && (
             <Modal>
-                  hola amigpod
+                  <TodoForm/>
             </Modal>
         )
 

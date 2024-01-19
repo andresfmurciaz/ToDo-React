@@ -20,7 +20,7 @@ const [searchValue, setSearchValue] = React.useState('');
 console.log(searchValue)
 
 // estado para el modal
-const [openModal, setOpenModal] = React.useState(true);
+const [openModal, setOpenModal] = React.useState(false);
 
 // marca el todo como completado
 const completaTodo = (text) =>{
@@ -35,6 +35,13 @@ const deleteTodo = (text) =>{
   const newTodo = [...todos ]
   const index = newTodo.findIndex((todo)=>todo.text == text)
   newTodo.splice(index,1);
+   saveTodos(newTodo)
+}
+
+
+const addTodo = (text) =>{
+  const newTodo = [...todos ]
+  newTodo.push({text,completado:false})
    saveTodos(newTodo)
 }
 
@@ -58,7 +65,8 @@ return(
         loading,
         error,
         openModal,
-        setOpenModal
+        setOpenModal,
+        addTodo
    }}> {children}
     
     </TodoContext.Provider>

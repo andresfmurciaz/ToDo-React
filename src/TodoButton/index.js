@@ -1,7 +1,11 @@
 import './TodoButon.css'
-function TodoButton(){
+function TodoButton({setOpenModal}){
     return(
-        <button className='CreateTodoButton' onClick={ ()=>{console.log('esto es un click jeje')}}>+ </button>
+        <button className='CreateTodoButton' 
+        onClick={ ()=>{
+            setOpenModal(state=>!state)
+        }
+        }> + </button>
     )
 }
 
