@@ -10,6 +10,7 @@ Este repositorio contiene una aplicación desarrollada con React para gestionar 
 - **Custom Hooks:** Desarrollo de hooks personalizados para modularizar la lógica y reutilizarla en diferentes partes de la aplicación.
 - **Iconos Personalizados:** Integración de iconos personalizados para mejorar la interfaz y proporcionar una experiencia visual agradable.
 - **Manejo de Estilos con CSS:** Estilización de componentes utilizando hojas de estilo CSS para una presentación limpia y atractiva.
+- **Persistencia de datos:** Localstorage
 - entre otras tecnologias base para el manejo de react.
 
 ## Enlace de Implementación (Git Pages)
